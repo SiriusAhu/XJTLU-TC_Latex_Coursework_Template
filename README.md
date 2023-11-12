@@ -1,8 +1,8 @@
 # XJTLU-TC Latex Coursework Template
----
 > Version: 0.0.1
 
 - This is a latex template for XJTLU-TC coursework created by *Taimingwang Liu*. :tada:
+- Please :star:`STAR` this repository if you find it useful!!! It's a great encouragement for me! :wink:
 
 ## Why I create this template?
 Inspired by [the excellent work](https://github.com/feimax/latex_template_for_xjtlu_eee_light) of *Dr.Cheng* and the EEE students of *XJTLU*, I'd like to make a template for **not so official** use.
