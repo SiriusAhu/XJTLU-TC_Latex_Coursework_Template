@@ -1,0 +1,183 @@
+% A template for XJTLU CourseWork by LaTeX
+% Author: Taimingwang Liu
+
+%%%%%%%% Parameters to Change
+
+% Basic information
+\newcommand{\moduleName}{XXX000TC MODULE\_NAMEs}
+\newcommand{\authorName}{AUTHOR\_NAME}
+\newcommand{\authorID}{AUTHOR\_ID}
+\newcommand{\reportDate}{\today}
+% \newcommand{\reportDate}{November 13, 2023}
+
+% The vertical offset of the title
+\newcommand{\titleVerticalOffset}{-1.5cm}
+
+% Picture Paths
+\newcommand{\XJTLU}{pics/logo/xjtlu_logo_blue.pdf} % XJTLU logo
+\newcommand{\coverPic}{pics/avator.png} % Cover picture(Optional)
+
+% Header and Footer
+% Width
+\newcommand{\headerWidth}{2pt} % Width of the header line
+\newcommand{\footerWidth}{2pt} % Width of the footer line
+% Contents
+\newcommand{\headL}{\leftmark} % Left header
+\newcommand{\headC}{} % Center header
+\newcommand{\headR}{\moduleName} % Right header
+\newcommand{\footL}{} % Left footer
+\newcommand{\footC}{\thepage} % Center footer
+\newcommand{\footR}{\authorName \authorID} % Right footer
+
+%%%%%%%% Boolean Parameters
+% Whether to use MS Word margin
+\newif\ifisMSWordMargin
+\isMSWordMargintrue % true
+% \isMSWordMarginfalse % false
+
+% Whether to use header and footer
+\newif\ifisHeaderFooter
+\isHeaderFootertrue % true
+% \isHeaderFooterfalse % false
+
+
+%%%%%%%%%%%%%%%%
+%    Others    %
+%%%%%%%%%%%%%%%%
+% 1. You can customize color in "settings.sty", which is the style I 
+
+%%%%%%%% %%%%%%%% %%%%%%%% %%%%%%%% %%%%%%%% %%%%%%%% %%%%%%%% %%%%%%%% 
+\documentclass{article}
+
+\usepackage{settings}
+
+% Indent first paragraph
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+
+% Get larger line spacing in table
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+
+%%%%%%%%%%%%%%%%%
+%     Title     %
+%%%%%%%%%%%%%%%%%
+
+\title{
+    \includegraphics[width=0.9\textwidth]{\XJTLU}\\
+    \vspace{1cm}
+    \moduleName
+    }
+
+\author{
+    \authorName \\
+    \authorID
+    }
+
+\date{\reportDate}
+
+\begin{document}
+\maketitle
+
+% Cover picture
+\vspace{2cm}
+\picHereSimple{\coverPic}{0.7\textwidth}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Table of Contents   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%
+%   Introduction   %
+%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\subsection{Background}
+Greetings! This is a template for XJTLU coursework by \LaTeX. \cite{example1}
+I make this template because of \href{https://github.com/feimax/latex_template_for_xjtlu_eee_light}{\underline{the excellent work} of \textit{Dr.Cheng} and the EEE students of \textit{XJTLU}}. 
+\textit{Dr.Cheng} has received his PhD degree in Liverpool University and now works in \textit{XJTLU}. 
+The repository above was also used for his doctoral thesis.\cite{example2}\par
+Kind as him, \href{https://www.xjtlu.edu.cn/en/study/departments/school-of-advanced-technology/communications-and-networking/department-staff/academic-staff/staff/fei-cheng}{\textit{\underline{Dr.Cheng}}} shared his template on \textit{Github} for every \textit{XJTLUer}. 
+Meanwhile, he also worked on a tutorial about how to use \LaTeX. (It's a pity that \href{http://blog.feieee.com/latex}{\underline{his blog}} is now closed.)
+Luckily, I found this burried treasure today(November 13, 2023).\par
+
+\subsection{Why I make this template}
+Inspired by his \textit{Open Source Spirit}, and considering his work is too sophisticated, I decided to make \textbf{a simpler template} for XJTLU coursework, 
+which is not so official but still useful.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%
+%      Part 1      %
+%%%%%%%%%%%%%%%%%%%%
+\section{What's in this template}
+\subsection{Pre-defined Commands}
+\noindent This template provides a command \textit{\textbf{picHere}} to insert pictures, with 4 parameters:
+\begin{enumerate}
+    \item ``\textit{path}'': the path of the picture
+    \item ``\textit{width}'': the width of the picture(percentage of the text width is recommended)
+    \item ``\textit{caption}'': the caption of the picture
+    \item ``\textit{label}'': the label of the picture(used for reference)
+\end{enumerate}
+
+\noindent For example, we can use ``\textit{\textbf{\textbackslash picHere\{pics/TC.png\}\{0.5\textbackslash textwidth\}\{TC Campus\}\{TC\}}}'' to insert a picture like this:
+\picHere{pics/TC.png}{0.8\textwidth}{TC Campus}{TC}
+
+This template also provides a command \textit{\textbf{picHereSimple}} to insert pictures, 
+with only the first 2 parameters. 
+This one is used for pictures without caption and label. (e.g . the cover picture)
+
+\subsection{Global Settings}
+At the beginning of this file, there are some parameters you can change to customize your report. 
+Including ``Basic Information''(e.g. \textit{moduleName}, \textit{authorName}...), 
+``The vertical offset of the title''(e.g. \textit{titleVerticalOffset}), ``Picture Paths''(e.g. \textit{XJTLU}, \textit{coverPic}),
+``Header and Footer''(e.g. \textit{headerWidth}, \textit{footerWidth}...).\par
+Moreover, the contents of \textit{Left}, \textit{Center} and \textit{Right} in the header and footer can also be changed easily by modifying the corresponding parameters.
+
+\subsection{Boolean Parameters}
+This is my favorite part. This template provides some boolean parameters to customize the style of the report.
+Currently, you can choose whether to use \textit{MS Word Margin} and \textit{Header and Footer}.\par
+For example, if you want a report with \textit{MS Word Margin} and \textit{Header and Footer}, 
+just keep the ``\textit{\textbf{\textbackslash isMSWordMargintrue}}'' and ``\textit{\textbf{\textbackslash isHeaderFootertrue}}''.(They are default settings)\par
+If you want to disable any of them, just change the postfix ``\textit{true}'' to ``\textit{false}'', \\ 
+e.g. ``\textit{\textbf{\textbackslash isMSWordMargintrue}}'' \(\rightarrow\) ``\textit{\textbf{\textbackslash isMSWordMarginfalse}}''.
+
+\subsection{Code}
+\noindent A color palette for code is defined in \textit{settings.sty}, which is the style I used in my \textit{VS Code}.
+\subsubsection{\textit{hello.cpp}}
+\lstinputlisting[caption=hello.cpp]{./code/hello.cpp}
+
+\subsubsection{\textit{multiplication.py}}
+\lstinputlisting[caption=multiplication.py]{./code/multiplication.py}
+
+\noindent Note: A parameter ``\textit{language}'' in the command ``\textit{\textbf{\textbackslash lstset}}'' is used to specify the language of the code. 
+\textbf{Please change it to the language you use.} 
+Wrong type of language may cause some error of the the key word color.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%
+%     Appendix     %
+%%%%%%%%%%%%%%%%%%%%
+\section{Appendix}
+\noindent Pictures used in this report:
+\begin{enumerate}
+    \item The \textit{XJTLU} Logo is from \href{https://github.com/feimax/latex_template_for_xjtlu_eee_light}{\underline{the \textit{Github} repository of \textit{Dr.Cheng}}}
+    \item The cover picture is the avator of author, which is made by \textit{Stable Diffusion}. (I call her \textit{Chicarlet}.)
+    \item The picture of \textit{TC Campus} is from \href{https://www.xjtlu.edu.cn/en/study/departments/entrepreneurship-and-enterprise-hub}{\underline{the official website of \textit{XJTLU}}}
+\end{enumerate}
+
+These pictures are used for \textbf{academic purpose only}. Many thanks to the authors.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%
+%     Reference    %
+%%%%%%%%%%%%%%%%%%%%
+% \bibliographystyle{apalike} % APA: apacite | IEEE: ieeetr | Plain: plain
+\bibliographystyle{ieeetr}
+\bibliography{reference}
+
+\end{document}

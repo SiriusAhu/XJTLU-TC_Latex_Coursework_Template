@@ -1,0 +1,109 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+
+% Normal packages
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage[utf8]{inputenc} % UTF-8 encoding
+\usepackage{amsmath,amssymb} % Math packages
+\usepackage{parskip} % Space between paragraphs
+\usepackage{graphicx} % Insert images
+\usepackage{caption} % Caption images
+\usepackage{geometry} % Page margins
+
+% Customizing the title section
+\usepackage{titling}
+% Manually set the vertical position of the title
+\setlength{\droptitle}{\titleVerticalOffset}
+
+% bibtex
+\usepackage{cite}
+
+% Fancyhdr: header and footer
+\usepackage{fancyhdr}
+\ifisHeaderFooter
+    \pagestyle{fancy}
+    \renewcommand{\headrulewidth}{\headerWidth}
+    \renewcommand{\footrulewidth}{\footerWidth}
+    \fancyhead[L]{\headL}
+    \fancyhead[C]{\headC}
+    \fancyhead[R]{\headR}
+    \fancyfoot[L]{\footL}
+    \fancyfoot[C]{\footC}
+    \fancyfoot[R]{\footR}
+\else
+    \pagestyle{plain}
+\fi
+
+% Hyperref: clickable links
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks,
+    colorlinks=true,
+    allcolors=black,
+    pdfstartview=Fit,
+    breaklinks=true
+}
+
+% Xcolor: color names
+\usepackage[dvipsnames]{xcolor}
+% Customized colors for code
+\definecolor{codeGrayL}{RGB}{171, 178, 191}
+\definecolor{codeGrayD}{RGB}{40, 44, 52}
+\definecolor{codeBlueL}{RGB}{90, 240, 245}
+\definecolor{codeBlueD}{RGB}{35, 148, 254}
+\definecolor{codeTomato}{RGB}{255, 100, 108}
+\definecolor{codeGreen}{RGB}{63, 197, 90}
+
+% Listings: customizable code format
+\usepackage{listings}
+\lstset{
+    language=Python, % Other languages: C++, Java
+    backgroundcolor=\color{codeGrayD},
+    basicstyle=\ttfamily\footnotesize\color{codeGrayL},
+    keywordstyle=\color{codeBlueD}\ttfamily,
+    stringstyle=\color{YellowOrange}\ttfamily,
+    commentstyle=\color{codeBlueL}\ttfamily,
+    morecomment=[l][\color{codeTomato}]{\#},
+    identifierstyle=\color{codeGreen},
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    rulecolor=\color{white},
+    % frame=tb,
+    title=\lstname,
+    captionpos=b,
+    escapeinside={\%*}{*)}
+}
+
+\ifisMSWordMargin
+    \ifisHeaderFooter
+        \fancyhfoffset[L]{1cm}
+        \fancyhfoffset[R]{1cm}
+    \fi
+    \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\else
+    \ifisHeaderFooter
+        \fancyhfoffset[L]{0cm}
+        \fancyhfoffset[R]{0cm}
+    \fi
+\fi
+
+% Functions
+\newcommand{\picHere}[4]{
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=#2]{#1}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+
+\newcommand{\picHereSimple}[2]{
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=#2]{#1}
+    \end{figure}
+}
