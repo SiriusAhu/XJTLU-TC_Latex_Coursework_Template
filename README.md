@@ -55,7 +55,7 @@ int main()
 ![After](pics_readme/code1-1.jpg)
 
 ## More
-I'm still a newbie in Latex, so if you find any bugs or have any suggestions, please feel free to :mailbox:[contact me by email](SiriusLLLUUU@outlook.com) or :speech_balloon:create an issue!
+I'm still a newbie in Latex, so if you find any bugs or have any suggestions, please feel free to :mailbox:[contact me by email](mailto:SiriusLLLUUU@outlook.com) or :speech_balloon:create an issue!
 I need your power to make this template better! :muscle:
 
 ## Acknowledgement
