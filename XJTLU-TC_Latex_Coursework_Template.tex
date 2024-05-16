@@ -9,6 +9,7 @@
 \newcommand{\authorName}{AUTHOR\_NAME}
 \newcommand{\authorID}{AUTHOR\_ID}
 \newcommand{\reportDate}{\today}
+\newcommand{\coverPath}{cover.pdf}
 % \newcommand{\reportDate}{November 13, 2023}
 
 % The vertical offset of the title
@@ -81,6 +82,8 @@
 \date{\reportDate}
 
 \begin{document}
+% insert cover page
+\includepdf{\coverPath}
 \maketitle
 
 % Cover picture

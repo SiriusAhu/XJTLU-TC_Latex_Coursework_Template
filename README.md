@@ -6,7 +6,7 @@
 
 ## Why I create this template?
 Inspired by [the excellent work](https://github.com/feimax/latex_template_for_xjtlu_eee_light) of *Dr.Cheng* and the EEE students of *XJTLU*, I'd like to make a template for **not so official** use.
-Their template was once used for the doctoral thesis of *Dr.Cheng*, which is somehow too formal for coursework.:cry:
+Their template was once used for the doctoral thesis of *Dr.Cheng*, which is somehow too formal for coursework. :cry:
 > Note: This template is not adopted by their project. :hushed:
 
 ## What's in this template?
@@ -49,9 +49,11 @@ int main()
 ```
 
 :broken_heart:Before:
+
 ![Before](pics_readme/code1-0.jpg)
 
 :heart:After:
+
 ![After](pics_readme/code1-1.jpg)
 
 ## More
