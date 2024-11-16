@@ -82,6 +82,9 @@
 \date{\reportDate}
 
 \begin{document}
+% Disable page numbering
+\pagenumbering{gobble}
+
 % insert cover page
 \includepdf{\coverPath}
 \maketitle
@@ -97,6 +100,8 @@
 \tableofcontents
 
 \newpage
+% Enable page numbering
+\pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%
 %   Introduction   %
 %%%%%%%%%%%%%%%%%%%%
